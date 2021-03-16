@@ -21,20 +21,19 @@ jobs:
         with:
           go-version: '1.14.0'
 
-      - name: Install dependencies
-        run: make install
-
-      - name: Run testing
-        run: make test
-
-      - name: Run build
-        run: make build
-
       - name: Run vet, fmt & lint
         run: |
           make fmt
           make vet
           make lint
+
+      - name: Run testing
+        run: make test
+
+      - name: Run build
+        run: make docker-build
+
+
 
       # Send slack notification
 #      - name: Send slack notification

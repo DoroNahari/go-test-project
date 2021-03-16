@@ -50,10 +50,6 @@ fmt:
 vet:
 	go vet ./...
 
-# Run go vet against code
-lint:
-	golint ./...
-
 # Generate code
 generate: controller-gen
 	$(CONTROLLER_GEN) object:headerFile="hack/boilerplate.go.txt" paths="./..."
